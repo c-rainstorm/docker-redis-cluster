@@ -53,7 +53,7 @@ export REDIS_CLUSTER_IP=0.0.0.0
 If you are downloading the container from dockerhub, you must add the internal IP envrionment variable to your `docker run` command.
 
 ```
-docker run grokzen/redis-cluster:latest -e "IP=0.0.0.0" ...
+docker run registry.cn-beijing.aliyuncs.com/rainstorm/redis-cluster:latest -e "IP=0.0.0.0" ...
 ```
 
 
@@ -123,7 +123,7 @@ Be default, it is going to launch 3 masters with 1 slave per master. This is con
 | -------------------- |--------:|
 | `INITIAL_PORT`       |    7000 |
 | `MASTERS`            |       3 |
-| `SLAVES_PER_MASTER`  |       1 | 
+| `SLAVES_PER_MASTER`  |       1 |
 
 Therefore, the total number of nodes (`NODES`) is going to be `$MASTERS * ( $SLAVES_PER_MASTER  + 1 )` and ports are going to range from `$INITIAL_PORT` to `$INITIAL_PORT + NODES - 1`.
 
@@ -151,7 +151,7 @@ For a release to be buildable it needs to be present at this url: http://downloa
 To build a different redis version use the argument `--build-arg` argument.
 
     # Example plain docker
-    docker build --build-arg redis_version=4.0.13 -t grokzen/redis-cluster .
+    docker build --build-arg redis_version=4.0.13 -t registry.cn-beijing.aliyuncs.com/rainstorm/redis-cluster .
 
 
 ### docker-compose
